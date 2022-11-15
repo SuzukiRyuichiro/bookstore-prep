@@ -3,7 +3,10 @@ if Rails.env.development?
   Author.destroy_all
 end
 
-5.times do
-  author = Author.create name: Faker::Book.author
-  Book.create title: Faker::Book.title, author: author
+100.times do
+  Author.create name: Faker::Book.author
+end
+
+1000.times do
+  Book.create title: Faker::Book.title, author: Author.all.sample
 end
