@@ -2,8 +2,8 @@
   <h1>Book catalogue</h1>
   <ol>
     <% @books.each do |book| %>
-      <li>
-        <strong><%= book.title %></strong> by <%= book.author.name %>
+      <li class="mb-1">
+        <%= image_tag book.author.avatar, class: "avatar mr-1" %> <strong><%= book.title %></strong> by <%= book.author.name %>
       </li>
     <% end %>
   </ol>
